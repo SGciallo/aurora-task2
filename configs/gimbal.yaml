@@ -1,0 +1,42 @@
+enemy_color: "red"
+
+#####-----YOLO 检测参数-----#####
+yolo_name: yolov8
+classify_model: assets/tiny_resnet.onnx
+yolov8_model_path: assets/best.xml
+device: CPU
+min_confidence: 0.5
+use_roi: true
+threshold: 150
+
+#####-----传统方法参数（保留，代码兼容）-----#####
+max_angle_error: 45
+min_lightbar_ratio: 1.5
+max_lightbar_ratio: 20
+min_lightbar_length: 8
+min_armor_ratio: 1
+max_armor_ratio: 5
+max_side_ratio: 1.5
+max_rectangular_error: 25
+roi:
+  x: 420
+  y: 50
+  width: 600
+  height: 600
+
+#####-----工业相机参数（Galaxy）-----#####
+camera_name: "galaxy"
+exposure_ms: 15.0
+gain: 8.0
+vid_pid: "2ba2:4d55"
+
+#####-----标定参数-----#####
+R_gimbal2imubody: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+camera_matrix: [1276.1186201367038, 0, 640.18681930919922, 0, 1279.9147438939515, 511.77573726824016, 0, 0, 1]
+distort_coeffs: [-0.21857775814451266, 0.16951179852770121, 0.00050928556165000661, 0.00029186303674826877, 0]
+R_camera2gimbal: [0, 0, 1, 1, 0, 0, 0, 1, 0]
+t_camera2gimbal: [0, 0, 0]
+
+#####-----云台串口-----#####
+com_port: "/dev/ttyUSB0"
+protocol: "gimbal"
